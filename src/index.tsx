@@ -6,7 +6,6 @@ import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 const App = () => {
 	const ref = useRef<any>();
 	const [input, setInput] = useState('');
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [code, setCode] = useState('');
 
 	const startService = async () => {
@@ -29,7 +28,11 @@ const App = () => {
 			entryPoints: ['index.js'],
 			bundle: true,
 			write: false,
-			plugins: [unpkgPathPlugin()],
+			plugins: [unpkgPathPlugin(input)],
+			define: {
+				'process.env.NODE_ENV': '"production"',
+				global: 'window',
+			},
 		});
 
 		// console.log(result);
