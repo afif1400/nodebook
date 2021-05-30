@@ -1,6 +1,6 @@
-import 'bulmaswatch/cyborg/bulmaswatch.min.css';
+import 'bulmaswatch/slate/bulmaswatch.min.css';
 import ReactDom from 'react-dom';
-import NodeCell from './components/nodecell';
+import NodeCell from './components/node-cell';
 const App = () => {
 	return (
 		<div>

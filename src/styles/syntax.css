@@ -1,4 +1,4 @@
-.editor-wrapper .mtk1 {
+/* .editor-wrapper .mtk1 {
 	color: #d4d4d4;
 }
 .editor-wrapper .mtk2 {
@@ -70,7 +70,7 @@
 .editor-wrapper .mtku {
 	text-decoration: underline;
 	text-underline-position: under;
-}
+} */
 
 .editor-wrapper .mtk100.Identifier.JsxElement.Bracket {
 	color: #0080ff;
@@ -87,11 +87,11 @@
 }
 
 .editor-wrapper .mtk101.Identifier.JsxOpeningElement.Identifier {
-	color: #569cd6;
+	color: #fff;
 }
 
 .editor-wrapper .mtk102.Identifier.JsxClosingElement.Identifier {
-	color: #569cd6;
+	color: #fff;
 	font-weight: lighter;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .editor-wrapper .mtk104.JsxElement.JsxText {
-	color: darkgoldenrod;
+	color: #fff;
 }
 
 .editor-wrapper .mtk105.glyph.Identifier.JsxElement {
