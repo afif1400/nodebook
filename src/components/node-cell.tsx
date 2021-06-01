@@ -4,17 +4,23 @@ import CodeEditor from './code-editor';
 import Preview from './preview';
 import Resizable from './resizeable';
 import axios from 'axios';
+import { Cell } from '../redux';
+import { useActions } from '../hooks/use-actions';
 
-const NodeCell = () => {
+interface NodeCellProps {
+	cell: Cell;
+	language: string;
+}
+
+const NodeCell: React.FC<NodeCellProps> = ({ cell, language }) => {
 	const [code, setCode] = useState('');
-	const [input, setInput] = useState('');
 	const [errStatus, setErrStatus] = useState('');
-	const [language, setLanguage] = useState('javascript');
+	const { updateCell } = useActions();
 
 	useEffect(() => {
 		if (language === 'javascript') {
 			const timer = setTimeout(async () => {
-				const output = await bundle(input);
+				const output = await bundle(cell.content);
 				setCode(output.code);
 				setErrStatus(output.err);
 			}, 1000);
@@ -23,15 +29,19 @@ const NodeCell = () => {
 			};
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [input]);
+	}, [cell.content]);
 
 	const getExecutedCode = () => {
 		axios
-			.post('http://localhost:5000/execute', JSON.stringify({ code: input }), {
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			})
+			.post(
+				'http://localhost:5000/execute',
+				JSON.stringify({ code: cell.content }),
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			)
 			.then((response) => {
 				console.log(response.data);
 				setCode(response.data);
@@ -41,19 +51,19 @@ const NodeCell = () => {
 	return (
 		<div>
 			<Resizable direction='vertical'>
-				<button onClick={getExecutedCode}>RUN</button>
+				{/* <button onClick={getExecutedCode}>RUN</button> */}
 				<div style={{ height: '100%', display: 'flex', flexDirection: 'row' }}>
 					<Resizable direction='horizontal'>
 						<CodeEditor
 							language={language}
-							initialValue='#Write your code here'
-							onChange={(value) => setInput(value)}
+							initialValue={cell.content}
+							onChange={(value) => updateCell(cell.id, value)}
 						/>
 					</Resizable>
 					{language === 'javascript' ? (
 						<Preview code={code} bundlingStatus={errStatus} />
 					) : (
-						<div>{code}</div>
+						<pre>{code}</pre>
 					)}
 				</div>
 			</Resizable>

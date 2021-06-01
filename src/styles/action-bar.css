@@ -1,0 +1,27 @@
+.action-bar {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.action-bar .button {
+	border-radius: 0px !important;
+	opacity: 0.3;
+	transition: opacity 0.5s;
+}
+
+.action-bar .select select {
+	border-radius: 0px !important;
+}
+
+.action-bar .up:hover {
+	opacity: 1;
+}
+
+.action-bar .down:hover {
+	opacity: 1;
+}
+
+.action-bar .del:hover {
+	opacity: 1;
+}
