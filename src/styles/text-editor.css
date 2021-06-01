@@ -1,7 +1,3 @@
-body {
-	color: #fefefe;
-}
-
 .w-md-editor .title {
 	line-height: unset !important;
 	font-size: unset !important;
@@ -30,6 +26,10 @@ body {
 .text-editor em {
 	font-style: italic;
 }
+
+/* .text-editor {
+	color: #fefefe;
+} */
 
 .text-editor .wmde-markdown hr {
 	border-top: 1px solid #dee5ed;

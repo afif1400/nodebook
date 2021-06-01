@@ -9,17 +9,16 @@ interface PreviewProps {
 const html = `
 <html lang="en">
 <head>    
-	<style>html {background:#fff;}</style>
+	
 </head>
 <body>
   <div id="root"></div>
   <script>
-	  const handleError = () =>{
+	  const handleError = (err) =>{
 			const root = document.querySelector('#root');
 			root.innerHTML = '<div style="color:red;"><h4>Runtime Error</h4>' + err + '</div>'
 			console.error(err);
 	  }
-
 		window.addEventListener('error',(event) => {
 			event.preventDefault();
 			handleError(event.error)

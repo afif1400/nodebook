@@ -37,7 +37,7 @@ export const insertCellBefore = (
 	type: CellTypes
 ): InsertCellBeforeAction => {
 	return {
-		type: ActionType.INSERT_CELL_DEFORE,
+		type: ActionType.INSERT_CELL_BEFORE,
 		payload: {
 			id,
 			type,

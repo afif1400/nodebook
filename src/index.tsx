@@ -1,16 +1,14 @@
-import 'bulmaswatch/slate/bulmaswatch.min.css';
+import 'bulmaswatch/cerulean/bulmaswatch.min.css';
 import ReactDom from 'react-dom';
-// import NodeCell from './components/node-cell';
 import { Provider } from 'react-redux';
+import CellList from './components/cell-list';
 import { store } from './redux';
-import TextEditor from './components/text-editor';
 
 const App = () => {
 	return (
 		<Provider store={store}>
-			{/* <NodeCell /> */}
 			<div>
-				<TextEditor />
+				<CellList />
 			</div>
 		</Provider>
 	);

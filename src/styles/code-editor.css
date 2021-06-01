@@ -16,3 +16,26 @@
 .editor-wrapper:hover .button-format {
 	opacity: 1;
 }
+
+.editor-wrapper .themeDot-wrapper {
+	position: absolute;
+	top: 16px;
+	right: 100px;
+	z-index: 20;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.editor-wrapper:hover .themeDot-wrapper {
+	opacity: 1;
+}
+
+.editor-wrapper .themeDot {
+	width: 23px;
+	height: 23px;
+	border-radius: 50%;
+	display: inline-block;
+	border: 2px solid #fff;
+	margin: 0 5px;
+	cursor: pointer;
+}
