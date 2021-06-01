@@ -1,6 +1,7 @@
 .cell-list-item {
 	position: relative;
-	margin: 40px 10px;
+	width: 95%;
+	margin: 0 auto;
 }
 
 .action-bar-wrapper {

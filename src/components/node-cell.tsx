@@ -52,7 +52,13 @@ const NodeCell: React.FC<NodeCellProps> = ({ cell, language }) => {
 		<div>
 			<Resizable direction='vertical'>
 				{/* <button onClick={getExecutedCode}>RUN</button> */}
-				<div style={{ height: '100%', display: 'flex', flexDirection: 'row' }}>
+				<div
+					style={{
+						height: 'calc(100% - 10px)',
+						display: 'flex',
+						flexDirection: 'row',
+					}}
+				>
 					<Resizable direction='horizontal'>
 						<CodeEditor
 							language={language}
@@ -63,7 +69,7 @@ const NodeCell: React.FC<NodeCellProps> = ({ cell, language }) => {
 					{language === 'javascript' ? (
 						<Preview code={code} bundlingStatus={errStatus} />
 					) : (
-						<pre>{code}</pre>
+						<pre style={{ width: '100%' }}>{code}</pre>
 					)}
 				</div>
 			</Resizable>

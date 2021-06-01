@@ -9,8 +9,12 @@ interface PreviewProps {
 const html = `
 <html lang="en">
 <head>    
-	
 </head>
+<style>
+	html{
+		background:#f5f5f5;
+	}
+</style>
 <body>
   <div id="root"></div>
   <script>

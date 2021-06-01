@@ -27,9 +27,9 @@
 	font-style: italic;
 }
 
-/* .text-editor {
-	color: #fefefe;
-} */
+.text-editor {
+	background-color: rgb(243, 241, 241);
+}
 
 .text-editor .wmde-markdown hr {
 	border-top: 1px solid #dee5ed;
