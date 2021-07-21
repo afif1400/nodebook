@@ -3,7 +3,7 @@ import bundle from '../bundler';
 import CodeEditor from './code-editor';
 import Preview from './preview';
 import Resizable from './resizeable';
-import axios from 'axios';
+// import axios from 'axios';
 import { Cell } from '../redux';
 import { useActions } from '../hooks/use-actions';
 
