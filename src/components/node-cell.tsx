@@ -31,22 +31,22 @@ const NodeCell: React.FC<NodeCellProps> = ({ cell, language }) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [cell.content]);
 
-	const getExecutedCode = () => {
-		axios
-			.post(
-				'http://localhost:5000/execute',
-				JSON.stringify({ code: cell.content }),
-				{
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				}
-			)
-			.then((response) => {
-				console.log(response.data);
-				setCode(response.data);
-			});
-	};
+	// const getExecutedCode = () => {
+	// 	axios
+	// 		.post(
+	// 			'http://localhost:5000/execute',
+	// 			JSON.stringify({ code: cell.content }),
+	// 			{
+	// 				headers: {
+	// 					'Content-Type': 'application/json',
+	// 				},
+	// 			}
+	// 		)
+	// 		.then((response) => {
+	// 			console.log(response.data);
+	// 			setCode(response.data);
+	// 		});
+	// };
 
 	return (
 		<div>
